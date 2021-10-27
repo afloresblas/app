@@ -1,0 +1,103 @@
+*{
+	margin:0px ;
+}
+
+body {
+	background: white;
+	background-size: 400% 400%;
+	animation: gradient 35s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.floatingInput-Form{
+    outline: 0 !important;
+	background: rgba( 255, 255, 255, 0.25 ) !important;
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )!important;
+	backdrop-filter: blur( 4px ) !important;
+	-webkit-backdrop-filter: blur( 4px ) !important;
+	border-radius: 10px !important;
+	border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
+
+#button-signin{
+	outline: 0;
+	background: rgba(31, 18, 209, 0.25);
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	transition:0.5s;
+	margin-bottom: 10px;
+}
+#button-signin:hover{
+	background: rgba(31, 18, 209, 0.7);
+	
+}
+.container-glass{
+	outline: 0;
+	background: rgba(255, 255, 255, 0.25) !important;
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )!important;
+	backdrop-filter: blur( 4px )!important;
+	-webkit-backdrop-filter: blur( 4px )!important;
+	border-radius: 10px!important;
+	border: 1px solid rgba( 255, 255, 255, 0.18 )!important;
+	transition:0.5s !important;
+	margin: 20px;
+}
+
+.CenterMain{
+
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+}
+
+
+.Dashboard{
+	width: 100%;
+	max-width: 90vw;
+	padding: 15px;
+	margin: auto;
+
+}
+
+input, textarea{
+	color:black !important;
+	margin: 10px 0px;
+	width: 100%;
+	outline: 0;
+	background: rgba( 255, 255, 255, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.col{
+	display: flex !important;
+  	justify-content: center !important;
+	align-items: center !important;
+	background: rgba( 255, 255, 255, 0.25 )!important;
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+
+	border: 1px solid rgba( 255, 255, 255, 0.18 )!important;
+	height: 50px;
+}
