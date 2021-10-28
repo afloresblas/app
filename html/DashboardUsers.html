@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
+
+
+</head>
+
+<body >
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light container-glass">
+        <div class="container">
+          <a class="navbar-brand" href="../html/Home.html"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>
+          </svg></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../html/ConclusionF.html">Ingresar conclusiones</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Generar Reportes
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../html/DashboardCasas.html">Reportes de casas</a></li>
+                  <li><a class="dropdown-item" href="../html/DashboardUsers.html">Reportes de usuarios</a></li>
+                  <li><a class="dropdown-item" href="../html/DashConclusiones.html">Reportes de conclusiones</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ingresar Datos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../html/Tema.html">Tema</a></li>
+                  <li><a class="dropdown-item" href="../html/SubTema.html">Subtema</a></li>
+                  <li><a class="dropdown-item" href="../html/Casa.html">Casa</a></li>
+                </ul>
+              </li>
+
+            </ul>
+            <div class="d-flex">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" href="../html/AddUser.html">Crear usuarios</a>
+                </li>
+              </ul>
+              <a class="nav-link active" aria-current="page" href="../index.html">Cerrar sesión</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="Dashboard">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+      </div>
+
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+      <h2>Filters</h2>
+      <form class="container">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+          <div class="col2">
+
+          <h3> Inicio</h3>
+          </div>  
+          <div >
+            <input class="time" type="date" id="start" name="trip-start" value="dd-mm-yy" min="2021-01-01" max="2025-12-31">
+          </div>
+          <div >
+            <input class="time" type="time" id="appt" name="appt"
+              min="09:00" max="18:00" required>
+          </div>
+
+          <div class="col2">
+            <h3> Fin</h3>
+          </div>
+
+          <div >
+            <input  class="time" type="date" id="start" name="trip-start" value="dd-mm-yy" min="2021-01-01" max="2025-12-31">
+          </div>
+          <div >
+            <input class="time" type="time" id="appt" name="appt"
+              min="09:00" max="18:00" required>
+          </div>
+
+        </div>
+       
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+          
+          <div>
+          </div>
+          <div>
+            <button id="button-signin" class="w-100 btn btn-lg btn-primary " type="submit">Buscar</button>
+          </div>
+          <div>
+            <button id="button-signin" class="w-100 btn btn-lg btn-primary " type="reset">Limpiar</button>
+          </div>
+        </div>
+
+      </form>
+
+
+
+      <h2>Section title</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1,001</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+              <td>text</td>
+            </tr>
+            <tr>
+              <td>1,002</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+              <td>layout</td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+              <td>tabular</td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,004</td>
+              <td>text</td>
+              <td>random</td>
+              <td>layout</td>
+              <td>dashboard</td>
+            </tr>
+            <tr>
+              <td>1,005</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+              <td>placeholder</td>
+            </tr>
+            <tr>
+              <td>1,006</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,007</td>
+              <td>placeholder</td>
+              <td>tabular</td>
+              <td>information</td>
+              <td>irrelevant</td>
+            </tr>
+            <tr>
+              <td>1,008</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+              <td>text</td>
+            </tr>
+            <tr>
+              <td>1,009</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+              <td>layout</td>
+            </tr>
+            <tr>
+              <td>1,010</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+              <td>tabular</td>
+            </tr>
+            <tr>
+              <td>1,011</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,012</td>
+              <td>text</td>
+              <td>placeholder</td>
+              <td>layout</td>
+              <td>dashboard</td>
+            </tr>
+            <tr>
+              <td>1,013</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+              <td>visual</td>
+            </tr>
+            <tr>
+              <td>1,014</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+              <td>data</td>
+            </tr>
+            <tr>
+              <td>1,015</td>
+              <td>random</td>
+              <td>tabular</td>
+              <td>information</td>
+              <td>text</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+    </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
